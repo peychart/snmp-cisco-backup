@@ -1,0 +1,2 @@
+# Backup cisco/hp devices:
+00 00 * * *	ROOT=/media/cloudfuse/os-backup; curl -sfL http://gitlab.os.gov.pf/root/snmpciscobackup/raw/master/cisco.backup.sh| /bin/bash -s -- -c community_name -d /tftpboot| while read i; do cp -f /tftpboot/$i $ROOT/cisco.conf/$i.$(date "+\%Y\%m\%d.\%H\%M") 2>/dev/null; done; cd /tftpboot/ && [ -d .git ] && (git add *.conf && git commit -m "New backups" && git push) >/dev/null 2>&1
