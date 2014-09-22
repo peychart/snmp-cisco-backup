@@ -10,20 +10,21 @@ Config of the TFTP server
 
  apt-get install tftpd -y
 
-<pre> cat >/etc/xinetd.d/tftp <<END
-service tftp
-{
-protocol        = udp
-port            = 69
-socket_type     = dgram
-wait            = yes
-user            = nobody
-server          = /usr/sbin/in.tftpd
-server_args     = /tftpboot
-disable         = no
-}
-
-END
+<pre>
+ cat >/etc/xinetd.d/tftp <<END
+ service tftp
+ {
+ protocol        = udp
+ port            = 69
+ socket_type     = dgram
+ wait            = yes
+ user            = nobody
+ server          = /usr/sbin/in.tftpd
+ server_args     = /tftpboot
+ disable         = no
+ }
+ 
+ END
 </pre>
 
 
