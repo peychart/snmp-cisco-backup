@@ -10,7 +10,6 @@ Config of the TFTP server
 
  apt-get install tftpd -y
 
-<pre>
  cat >/etc/xinetd.d/tftp << END
 
  service tftp
@@ -36,7 +35,6 @@ Config of the TFTP server
  }
  
  END
- </pre>
 
 
 To add device backups
